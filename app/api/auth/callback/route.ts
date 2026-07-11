@@ -34,10 +34,11 @@ export async function GET(request: NextRequest) {
   try {
     const tokenUrl = `https://shopify.com/${shopId}/auth/oauth/token`;
     
+    const origin = new URL(request.url).origin;
     const body = new URLSearchParams({
       grant_type: "authorization_code",
       client_id: clientId,
-      redirect_uri: `http://localhost:3000/api/auth/callback`,
+      redirect_uri: `${origin}/api/auth/callback`,
       code,
       code_verifier: verifier,
     });

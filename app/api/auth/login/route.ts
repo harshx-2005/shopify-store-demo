@@ -12,7 +12,7 @@ function generateCodeChallenge(verifier: string) {
   return hash.toString("base64url");
 }
 
-export async function GET() {
+export async function GET(request: Request) {
   const shopId = process.env.SHOPIFY_SHOP_ID;
   const clientId = process.env.NEXT_PUBLIC_SHOPIFY_CLIENT_ID;
 
@@ -44,7 +44,8 @@ export async function GET() {
     maxAge: 300, // 5 minutes
   });
 
-  const redirectUri = `http://localhost:3000/api/auth/callback`;
+  const origin = new URL(request.url).origin;
+  const redirectUri = `${origin}/api/auth/callback`;
   const scopes = "openid email customer";
 
   const authUrl = `https://shopify.com/${shopId}/auth/oauth/authorize?` +

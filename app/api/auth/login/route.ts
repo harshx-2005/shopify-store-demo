@@ -46,7 +46,7 @@ export async function GET(request: Request) {
 
   const origin = new URL(request.url).origin;
   const redirectUri = `${origin}/api/auth/callback`;
-  const scopes = "openid email customer";
+  const scopes = "openid email https://api.shopify.com/auth/customer.customer";
 
   const authUrl = `https://shopify.com/${shopId}/auth/oauth/authorize?` +
     `client_id=${clientId}&` +

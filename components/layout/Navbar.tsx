@@ -23,6 +23,7 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [shopifyCollections, setShopifyCollections] = useState<ShopifyCollection[]>([]);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // Monitor scroll for header styling
   useEffect(() => {
@@ -44,6 +45,20 @@ export default function Navbar() {
       setShopifyCollections(collections || []);
     };
     fetchMenuCollections();
+  }, []);
+
+  // Check customer session status
+  useEffect(() => {
+    const checkSession = async () => {
+      try {
+        const res = await fetch("/api/auth/session");
+        const data = await res.json();
+        setIsLoggedIn(data.loggedIn);
+      } catch (err) {
+        console.error("Session check failed:", err);
+      }
+    };
+    checkSession();
   }, []);
 
   return (
@@ -174,14 +189,30 @@ export default function Navbar() {
               <Heart className="w-4.5 h-4.5 text-luxury-charcoal opacity-90" />
             </Link>
 
-            {/* Profile Mockup */}
-            <Link
-              href="/contact"
-              className="p-1 hover:text-luxury-gold transition-colors duration-300 hidden sm:inline-block"
-              aria-label="Profile"
-            >
-              <User className="w-4.5 h-4.5 text-luxury-charcoal opacity-90" />
-            </Link>
+            {/* Customer Auth Profile Link */}
+            {isLoggedIn ? (
+              <Link
+                href="/profile"
+                className="p-1 hover:text-luxury-gold transition-colors duration-300 relative flex items-center group"
+                aria-label="Account Profile"
+              >
+                <User className="w-5 h-5 text-luxury-olive font-bold border border-luxury-olive rounded-full p-0.5" />
+                <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 bg-luxury-charcoal text-luxury-cream text-[9px] px-2 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none mb-1 font-sans font-bold whitespace-nowrap shadow-sm">
+                  Profile
+                </span>
+              </Link>
+            ) : (
+              <a
+                href="/api/auth/login"
+                className="p-1 hover:text-luxury-gold transition-colors duration-300 relative flex items-center group"
+                aria-label="Login to Account"
+              >
+                <User className="w-4.5 h-4.5 text-luxury-charcoal opacity-90" />
+                <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 bg-luxury-charcoal text-luxury-cream text-[9px] px-2 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none mb-1 font-sans font-bold whitespace-nowrap shadow-sm">
+                  Login
+                </span>
+              </a>
+            )}
 
             {/* Cart Button */}
             <button

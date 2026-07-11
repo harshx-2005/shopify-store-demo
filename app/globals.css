@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #FDFDFB; /* luxury-warmWhite */
+    color: #1E1E1C;            /* luxury-charcoal */
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Custom luxury scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #FAF7F2; /* luxury-cream */
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #C5A880; /* luxury-gold */
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #8B8476; /* luxury-stone */
+  }
+}
+
+@layer utilities {
+  .text-shadow-subtle {
+    text-shadow: 0 2px 4px rgba(27, 27, 27, 0.05);
+  }
+  
+  .glassmorphism {
+    background: rgba(253, 253, 251, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(139, 132, 118, 0.08);
+  }
+  
+  .glassmorphism-dark {
+    background: rgba(30, 30, 28, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(139, 132, 118, 0.15);
+  }
+}
+
+/* Custom Cursor styling */
+.custom-cursor {
+  width: 10px;
+  height: 10px;
+  background-color: #4B5340; /* luxury-olive */
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+}
+
+.custom-cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(197, 168, 128, 0.4); /* luxury-gold */
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.1s ease-out, width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+}
+
+/* Magnified state for clickable options */
+.custom-cursor-hover .custom-cursor {
+  width: 18px;
+  height: 18px;
+  background-color: #C5A880; /* luxury-gold */
+  opacity: 0.6;
+}
+
+.custom-cursor-hover .custom-cursor-ring {
+  width: 50px;
+  height: 50px;
+  border-color: #4B5340; /* luxury-olive */
+}
+
+/* Hide cursor on touch devices */
+@media (max-width: 1024px) {
+  .custom-cursor,
+  .custom-cursor-ring {
+    display: none;
+  }
+}
+
+/* Line animations */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: currentColor;
+  transform-origin: bottom right;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Page transitions loader */
+.page-transition-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(250, 247, 242, 0) 0%,
+    rgba(197, 168, 128, 0.05) 50%,
+    rgba(250, 247, 242, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

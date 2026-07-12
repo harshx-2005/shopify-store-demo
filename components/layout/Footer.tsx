@@ -116,9 +116,15 @@ export default function Footer() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email address"
                 required
+                suppressHydrationWarning
                 className="bg-transparent text-xs font-sans placeholder-luxury-stone placeholder-opacity-60 focus:outline-none flex-grow"
               />
-              <button type="submit" className="hover:text-luxury-gold transition-colors duration-300" aria-label="Subscribe">
+              <button
+                type="submit"
+                suppressHydrationWarning
+                className="hover:text-luxury-gold transition-colors duration-300"
+                aria-label="Subscribe"
+              >
                 <ArrowRight className="w-4 h-4" />
               </button>
             </form>

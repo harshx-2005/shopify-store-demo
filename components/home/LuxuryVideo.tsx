@@ -88,6 +88,7 @@ export default function LuxuryVideo() {
         >
           <button
             onClick={togglePlay}
+            suppressHydrationWarning
             className="flex items-center gap-2 px-5 py-2.5 bg-luxury-warmWhite bg-opacity-10 border border-luxury-cream border-opacity-25 hover:bg-luxury-warmWhite hover:text-luxury-charcoal rounded-full text-xs font-sans tracking-widest uppercase transition-all duration-300"
           >
             {isPlaying ? (
@@ -103,6 +104,7 @@ export default function LuxuryVideo() {
 
           <button
             onClick={toggleMute}
+            suppressHydrationWarning
             className="p-3 bg-luxury-warmWhite bg-opacity-10 border border-luxury-cream border-opacity-25 hover:bg-luxury-warmWhite hover:text-luxury-charcoal rounded-full transition-all duration-300"
             aria-label={isMuted ? "Unmute audio" : "Mute audio"}
           >

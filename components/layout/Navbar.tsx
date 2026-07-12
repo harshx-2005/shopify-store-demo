@@ -174,6 +174,7 @@ export default function Navbar() {
             {/* Search Toggle */}
             <button
               onClick={() => setIsSearchOpen(true)}
+              suppressHydrationWarning
               className="p-1 hover:text-luxury-gold transition-colors duration-300"
               aria-label="Open Search"
             >
@@ -217,6 +218,7 @@ export default function Navbar() {
             {/* Cart Button */}
             <button
               onClick={openCart}
+              suppressHydrationWarning
               className="hover:text-luxury-gold transition-colors duration-300 relative flex items-center bg-luxury-cream hover:bg-luxury-beige rounded-full p-2.5 border border-luxury-stone border-opacity-10 shadow-sm"
               aria-label="Open Shopping Bag"
             >

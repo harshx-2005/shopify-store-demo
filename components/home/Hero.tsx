@@ -75,8 +75,7 @@ export default function Hero() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Floating Muted Accent Ring */}
-      <div className="absolute top-24 right-1/4 w-96 h-96 rounded-full border border-luxury-gold border-opacity-10 pointer-events-none hidden md:block animate-[spin_120s_linear_infinite]" />
+
 
       {/* Content overlays */}
       <div className="absolute inset-0 flex flex-col justify-center px-6 md:px-16 lg:px-24">
@@ -143,6 +142,7 @@ export default function Hero() {
       <div className="absolute bottom-10 right-6 md:right-16 lg:right-24 flex gap-4">
         <button
           onClick={handlePrev}
+          suppressHydrationWarning
           className="p-3 bg-luxury-cream bg-opacity-10 hover:bg-opacity-25 rounded-full border border-luxury-cream border-opacity-15 transition-all duration-300 text-luxury-cream"
           aria-label="Previous slide"
         >
@@ -150,6 +150,7 @@ export default function Hero() {
         </button>
         <button
           onClick={handleNext}
+          suppressHydrationWarning
           className="p-3 bg-luxury-cream bg-opacity-10 hover:bg-opacity-25 rounded-full border border-luxury-cream border-opacity-15 transition-all duration-300 text-luxury-cream"
           aria-label="Next slide"
         >
@@ -163,6 +164,7 @@ export default function Hero() {
           <button
             key={index}
             onClick={() => setCurrent(index)}
+            suppressHydrationWarning
             className={`h-1 rounded-full transition-all duration-500 ${
               current === index ? "w-8 bg-luxury-gold" : "w-2 bg-luxury-cream bg-opacity-40"
             }`}

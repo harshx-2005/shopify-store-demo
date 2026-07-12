@@ -1,0 +1,124 @@
+[
+  {
+    "id": "test_session",
+    "timestamp": "2026-07-12T09:38:58.047Z",
+    "userLanguage": "English",
+    "modelUsed": "gemini-gemini-2.5-flash",
+    "messagesCount": 2,
+    "durationSeconds": 12,
+    "intents": [
+      "searchProducts",
+      "getCollectionProducts",
+      "listCollections"
+    ],
+    "searches": [
+      "is there any coupon?"
+    ],
+    "recommendedProducts": [],
+    "converted": false,
+    "messages": [
+      {
+        "role": "user",
+        "content": "show me bedsheets",
+        "timestamp": "2026-07-12T09:38:58.047Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Namaste! Welcome to Fashion Handloom. I'd be delighted to show you our exquisite collection of bedsheets.\n\n",
+        "timestamp": "2026-07-12T09:38:58.047Z"
+      }
+    ]
+  },
+  {
+    "id": "session_ds2xgp7hva",
+    "timestamp": "2026-07-12T09:48:45.880Z",
+    "userLanguage": "English",
+    "modelUsed": "gemini-gemini-2.5-flash",
+    "messagesCount": 6,
+    "durationSeconds": 12,
+    "intents": [],
+    "searches": [],
+    "recommendedProducts": [],
+    "converted": false,
+    "messages": [
+      {
+        "role": "user",
+        "content": "[Visual Room Image Upload]",
+        "timestamp": "2026-07-12T09:48:45.880Z"
+      },
+      {
+        "role": "assistant",
+        "content": "[Visual Room Image Upload]",
+        "timestamp": "2026-07-12T09:48:45.880Z"
+      },
+      {
+        "role": "user",
+        "content": "[Visual Room Image Upload]",
+        "timestamp": "2026-07-12T09:48:45.880Z"
+      },
+      {
+        "role": "assistant",
+        "content": "[Visual Room Image Upload]",
+        "timestamp": "2026-07-12T09:48:45.880Z"
+      },
+      {
+        "role": "user",
+        "content": "[Visual Room Image Upload]",
+        "timestamp": "2026-07-12T09:48:45.880Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Namaste! While I'd love to assist you, Fashion Handloom specializes in luxurious handcrafted home textiles like premium mulberry silk bedding, organic cotton bedsheets, and elegant curtains. We don't carry snowboards.\n\nIs there anything else I can help you with regarding our beautiful home decor collection? Perhaps you're interested in some cozy comforters or elegant dining linen?",
+        "timestamp": "2026-07-12T09:48:45.880Z"
+      }
+    ]
+  },
+  {
+    "id": "session_qnihz1nsjtn",
+    "timestamp": "2026-07-12T12:26:04.567Z",
+    "userLanguage": "Hindi (हिंदी)",
+    "modelUsed": "gemini-gemini-2.5-flash",
+    "messagesCount": 2,
+    "durationSeconds": 12,
+    "intents": [],
+    "searches": [],
+    "recommendedProducts": [],
+    "converted": false,
+    "messages": [
+      {
+        "role": "user",
+        "content": "[Visual Room Image Upload]",
+        "timestamp": "2026-07-12T12:26:04.567Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Namaste! Welcome to Fashion Handloom. I'm Aarav, your personal stylist for luxury bedding and home decor. How may I assist you today? Perhaps you're looking for something specific, or would you like some inspiration? 😊",
+        "timestamp": "2026-07-12T12:26:04.567Z"
+      }
+    ]
+  },
+  {
+    "id": "session_8sps9rsqklv",
+    "timestamp": "2026-07-12T13:23:55.867Z",
+    "userLanguage": "English",
+    "modelUsed": "gemini-gemini-2.5-flash",
+    "messagesCount": 2,
+    "durationSeconds": 12,
+    "intents": [],
+    "searches": [],
+    "recommendedProducts": [],
+    "converted": false,
+    "messages": [
+      {
+        "role": "user",
+        "content": "[Visual Room Image Upload]",
+        "timestamp": "2026-07-12T13:23:55.867Z"
+      },
+      {
+        "role": "assistant",
+        "content": "Namaste! Welcome to Fashion Handloom, your destination for exquisite handcrafted home textiles. How may I assist you in finding the perfect luxurious additions for your home today?",
+        "timestamp": "2026-07-12T13:23:55.867Z"
+      }
+    ]
+  }
+]

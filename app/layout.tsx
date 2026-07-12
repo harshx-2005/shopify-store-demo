@@ -5,6 +5,7 @@ import { CartProvider } from "@/hooks/useCart";
 import CustomCursor from "@/components/common/CustomCursor";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import ChatWidget from "@/components/chat/ChatWidget";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -63,6 +64,7 @@ export default function RootLayout({
           <CustomCursor />
           <Navbar />
           <main className="flex-grow">{children}</main>
+          <ChatWidget />
           <Footer />
         </CartProvider>
       </body>

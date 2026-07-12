@@ -63,7 +63,7 @@ export default function ProductCard({ product }: ProductCardProps) {
     <div className="group relative flex flex-col bg-luxury-warmWhite rounded-2xl overflow-hidden shadow-luxury hover:shadow-luxuryHover transition-all duration-500 border border-luxury-stone border-opacity-5">
       {/* Product Image Box */}
       <div className="relative w-full aspect-[4/5] bg-luxury-cream overflow-hidden">
-        <Link href={`/product/${product.handle}`} className="block w-full h-full">
+        <Link href={`/product/${product.handle}`} className="relative block w-full h-full">
           {/* Primary image */}
           {primaryImage ? (
             <Image
@@ -107,6 +107,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-3 opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 z-20 px-4">
           <button
             onClick={() => setIsWishlisted(!isWishlisted)}
+            suppressHydrationWarning
             className={`p-3 bg-luxury-warmWhite rounded-full shadow-luxury hover:bg-luxury-cream transition-all duration-300 ${
               isWishlisted ? "text-red-500" : "text-luxury-charcoal"
             }`}
@@ -118,6 +119,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           <button
             onClick={handleQuickAdd}
             disabled={!product.availableForSale || isAdding}
+            suppressHydrationWarning
             className="flex-grow py-3 px-4 bg-luxury-charcoal hover:bg-luxury-olive text-luxury-warmWhite text-[10px] font-sans uppercase tracking-widest rounded-xl transition-all duration-300 shadow-luxury flex items-center justify-center gap-2 font-medium disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <ShoppingBag className="w-3.5 h-3.5" />
